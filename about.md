@@ -1,19 +1,15 @@
 ---
 layout: page
-title: About Pixyll
+title: About me
 permalink: /about/
 ---
 
-This Jekyll theme was crafted with <3 by [John Otander](http://johnotander.com)
-([@4lpine](https://twitter.com/4lpine)).
+My English name is yookcy.
 
-Checkout the [Github repository](https://github.com/johnotander/pixyll) to download it,
-request a feature, report a bug, or contribute. It's free, and open source
-([MIT](http://opensource.org/licenses/MIT)).
+My job is a front-end engineer, now I'm working in qihoo. You can contact me with my email me@yoocky.com.
 
-Thanks to the following:
+Thanks to the following to provide a platform for my blog:
 
-* [BASSCSS](http://basscss.com)
+* [Github](http://github.com)
 * [Jekyll](http://jekyllrb.com)
-* [Refills](http://refills.bourbon.io/)
-* [Solarized](http://ethanschoonover.com/solarized)
+
