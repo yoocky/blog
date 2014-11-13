@@ -6,12 +6,48 @@ summary:    Transform your plain text into static websites and blogs. Simple, st
 categories: jekyll pixyll
 ---
 
-Jekyll is a tool for transforming your plain text into static websites and 
-blogs. It is simple, static, and blog-aware. Jekyll uses the 
-[Liquid](http://docs.shopify.com/themes/liquid-basics) templating
-language and has builtin [Markdown](http://daringfireball.net/projects/markdown/)
-and [Textile](http://en.wikipedia.org/wiki/Textile_(markup_language)) support.
+##巧用css zoom属性让移动端页面自适应
+做移动端的开发，少不了各种各样的活动页，专题页，而这些又脱离不了许多的背景图，这样的设计又要做自适应兼容所有分辨率的屏幕，
+真要切一套自适应的页面，页面不能按固定的分辨率切，真是苦逼了部门里做重构的妹纸，但是PM又不肯妥协怎么办？
 
-It also ties in nicely to [Github Pages](https://pages.github.com/).
+没关系，大家束之高阁的css的zoom属性终于派上用场了，以前这个只被用在IE6下做hack的玩意这次被哪了出来，来做他真正的用处。
+那就是缩放页面的元素，这样妹纸只要按固定的一个css像素来切一个页面，不妨我们默认为640px宽度，
+然后交给偶就可以了，接下来的一切由偶来解决。
 
-Learn more about Jekyll on their [website](http://jekyllrb.com/).
+1、页面的Dom Ready后获取一下屏幕的理想视口（哈哈这个词有点专业 实际上就是 屏幕的实际物理像素/设备像素比）js 描述 
+    
+    var w = document.documentElement.clientWidth || document.body.clientWidth;
+    
+2、接下来就是换算应该缩放多少了，刚才假设我们页面是按固定宽度640px切的，那么屏幕的理想视口大于640px我们就把它放大，小于化就把他缩小
+,总之要让他满屏展示，具体缩放多少的zoom值，就用页面的实际宽度除以屏幕的理想视口，即z值为：
+
+    var z = w / 640;
+    
+3、，获取页面最外层的容器，不如我们就获取页面的body,给他的样式中添加zoom属性
+
+    var body = document.getElementsByTagName('body')[0];
+    body.style.zoom = z;
+    
+经过这三步就暴力的实现了一套伪自适应方案。
+
+下来我们再将它封装成一个适合放在我们所有活动页面的footer中，这次我们只是动态的在head里面创建了一个style 并追加了一个zoom的class名，
+只需要在需要自适应放大的容器加上这个zoom的class就可以。
+
+   
+   (function(){
+        var _w,
+            _zoom,
+            _hd, 
+            _orientationChange,
+            _doc = document,
+            _style = _doc.getElementById("_zoom");
+        _style || (_hd = _doc.getElementsByTagName("head")[0],_style=_doc.createElement("style"),_hd.appendChild(_style));
+        _orientationChange = function(){
+           _w    = _doc.documentElement.clientWidth || _doc.body.clientWidth;
+           _zoom = _w / 640;
+           _style.innerHTML = ".zoom {zoom:" + _zoom + ";-webkit-text-size-adjust:auto!important;}";
+        };
+        _style.setAttribute("zoom",_zoom);
+        _orientationChange();
+        window.addEventListener("resize",_orientationChange,false);
+    })();
