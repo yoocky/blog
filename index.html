@@ -1,39 +1,20 @@
 ---
-layout: master
-title: 首页
-full_posts: 3
+layout: default
 ---
 
-<div class='home-box' id='home-left'>
-  <h2><a href='atom.xml' class='float-right'
-      ><img src='/images/subscribe-icon.gif' alt='Subscribe'/></a
-      >最新博客（<a href='/blog.html'>更多</a>）</h2>
-  
-{% for post in site.posts limit:page.full_posts %}
-  <div class='post'>
-    <span class='date'>{{post.date | date_to_string}}</span>
-    <h1><a href='{{post.url}}'>{{post.title}}</a></h1>
-    <div class='body'>{{post.content}}</div>
-    <a href='{{post.url}}#disqus_thread'>View Comments</a>
-  </div>
-{% endfor %}
+<div class="home">
 
-</div>
-
-<div class='home-box' id='home-right'>
-  <h2>联系方式</h2>
-  <div class='sidebar'>
-    <div class="sidebar-item">
-    <dl>
-      <dt>邮件：</dt>
-      <dd>hzmook AT gmail DOT com </dd>
-
-      <dt>公司：</dt>
-      <dd><a href="http://www.smartbi.com.cn/" target='_blank' title='广州思迈特'>www.smartbi.com.cn</a></dd>
-
-    </dl>
-
-    </div>
+  <div class="posts">
+    {% for post in paginator.posts %}
+      <div class="post">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+          <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+          <h3 class="h2 post-title">{{ post.title }}</h3>
+          <p class="post-summary">{{ post.summary }}</p>
+        </a>
+      </div>
+    {% endfor %}
   </div>
 
+  {% include pagination.html %}
 </div>
