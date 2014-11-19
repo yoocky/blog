@@ -4,7 +4,7 @@ title: About me
 permalink: /about/
 ---
 
-My English name is yookcy.
+My english name is yoocky.
 
 My job is a front-end engineer, now I'm working in qihoo. 
 
