@@ -11,6 +11,7 @@ A fast and convenient cross terminal file sharing and temporary storage of onlin
 Access address is burnbox.cc 
 
 Authors:
+
 * [Yoocky 周梦延](http://blog.yoocky.com)
 * [Melonh 瓜瓜](http://75team.github.io/novaUI/)
 * [黑mao](http://home.cnblogs.com/u/xiaoheimiaoer/)
@@ -24,4 +25,5 @@ The cards will be four points, by addition and subtraction, multiplication and d
 将四张扑克牌上的点数，通过加、减、乘、除四则运算，在规定时间内结果就是24即可得分。每局限时60秒。
 
 Author:
+
 * [Yoocky 周梦延](http://blog.yoocky.com)
