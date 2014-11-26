@@ -14,7 +14,7 @@ Authors:
 * [Melonh 瓜瓜](http://75team.github.io/novaUI/)
 * [黑mao](http://home.cnblogs.com/u/xiaoheimiaoer/)
 * [alphatr 乌龟盼](https://blog.alphatr.com/)
-* 
+
 ==============================
 ###[24点小游戏](http://www.ishanku.com/index/detail?id=10000106)
 
