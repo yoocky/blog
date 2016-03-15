@@ -7,13 +7,13 @@ categories: linux
 ---
 
 在JavaScript的世界里,有两个词经常被提到,shim和polyfill.它们指的都是什么,又有什么区别?
-###1.Shim
+### 1.Shim
 
 一个shim是一个库,它将一个新的API引入到一个旧的环境中,而且仅靠旧环境中已有的手段实现.
 
 译者注:有时候也称为shiv,比如https://github.com/aFarkas/html5shiv
 
-###2.Polyfill
+### 2.Polyfill
 
 在2010年10月份的时候,Remy Sharp在博客上发表了一篇关于术语"polyfill"的文章,
 
@@ -24,7 +24,7 @@ categories: linux
 Polyfilla是一个英国产品,在美国称之为Spackling Paste(译者注:刮墙的,在中国称为腻子).记住这一点就行:把旧的浏览器想象成为一面有了裂缝的墙.这些polyfill会帮助我们把这面墙的裂缝抹平,还我们一个更好的光滑的墙壁(浏览器)
 
 
-###3.例子
+### 3.例子
 
 1. Paul Irish发布过一个Polyfill的总结页面“HTML5 Cross Browser Polyfills”.
 
