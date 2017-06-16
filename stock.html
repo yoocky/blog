@@ -5,7 +5,7 @@ layout: default
 <div class="home">
 
   <div class="posts">
-    {% for post in paginator.posts.stock %}
+    {% for post in paginator.posts %}
       {% if post.categories === 'stock' %}
         <div class="post">
           <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
