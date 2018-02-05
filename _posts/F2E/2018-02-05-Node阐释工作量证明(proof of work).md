@@ -25,7 +25,7 @@ RSA算法基于一个十分简单的数论事实:将两个大素数相乘十分e
 即md5(s+n)的结果符合验证者的要求.工作者仅仅能不停的穷举,找出这样一个数n.
 
 以下是Javascript代码.
-工作坊:
+工作方:
 
     import crypto from 'crypto';
     var md5 = (str) => {
