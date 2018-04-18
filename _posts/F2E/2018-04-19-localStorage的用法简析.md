@@ -18,13 +18,19 @@ HTML5 提供了两种在客户端存储数据的新方法：
 
 ##### 增加属性值
 
+    // 方法一 标准的api
     localStorage.setItem('test', 'hello word');
+
+    // 方法二 直接定义对象属性
     localStorage.test = 'hello word';
     localStorage['test'] = 'hello word';
 
 ##### 自定义属性的获取
-
+    
+    // 方法一 标准的api
     console.log(localStorage.getItem('test'))
+
+    // 方法二 直接获取对象属性
     console.log(localStorage.test)
     console.log(localStorage['test'])
 
@@ -32,8 +38,11 @@ HTML5 提供了两种在客户端存储数据的新方法：
 ##### 删除属性值
 
 * 删除单个属性
-
+       
+      // 方法一 标准的api
       localStorage.removeItem('test');
+
+      // 直接删除对象属性
       delete localStorage.test
 
 * 删除所有自定义属性
