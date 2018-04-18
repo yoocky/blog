@@ -3,7 +3,7 @@ layout:     post
 title:      localStorage的用法简析
 date:       2018-04-19 12:12:00
 summary:    localStorage是一个
-categories: linux
+categories: js
 ---
 
 
