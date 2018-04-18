@@ -89,24 +89,24 @@ HTML5 提供了两种在客户端存储数据的新方法：
 
       localStorage.testNum = 1;    
       console.log(localStorage.testNum)
-      console.log(type of localStorage.testNum)
+      console.log(typeof localStorage.testNum)
   
 * Array
 
       localStorage.testArray = ['a', 'b', 'c'];
       console.log(localStorage.testArray)
-      console.log(type of localStorage.testArray)
+      console.log(typeof localStorage.testArray)
 
 * Object
 
       localStorage.testObj = {};
       console.log(localStorage.testObj)
-      console.log(type of localStorage.testObj)
+      console.log(typeof localStorage.testObj)
 
 * toString
 
       localStorage.testTransfer = {toString() { return 'hellword'}}    // 调用了toString()方法
-      console.log(type of localStorage.testTransfer)
+      console.log(typeof localStorage.testTransfer)
 
 #### 同源策略
 
