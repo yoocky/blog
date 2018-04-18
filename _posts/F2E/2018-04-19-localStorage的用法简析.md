@@ -53,30 +53,57 @@ HTML5 提供了两种在客户端存储数据的新方法：
 #### 存储时间不受限制
 
   除非用户主动删除，没有过期时间的的，
-  1、合理分配命名空间，防止脏数据污染，和key名的冲突
-  2、不要存储用户的隐私数据，如需存储尽量用sessionStorage
+  1  合理分配命名空间，防止脏数据污染，和key名的冲突
+  2  不要存储用户的隐私数据，如需存储尽量用sessionStorage
   ...
 
 #### 值的数据类型
 
   只能存储String的值，非string类型的都会调用存储对象的toString()方法进行转换
-  test
-  * localStorage.test = null; // null
-  * localStorage.test = true; // Booloon
-  * localStorage.test = 1;    // Number
-  * localStorage.test = ['a', 'b', 'c'] // Array
-  * localStorage.test = {}    // Object
-  * localStorage.test = {toString() { return 'hellword'}}    // 调用了toString()方法
+  #### test
+
+  * null 
+    
+      localStorage.testNull = null; 
+      console.log(localStorage.testNull)
+      console.log(typeof localStorage.testNull)
+
+  * Booloon 
+
+      localStorage.testBool = true; 
+      console.log(localStorage.testBool)
+      console.log(typeof localStorage.Bool)
+
+  * Number
+
+      localStorage.testNum = 1;    
+      console.log(localStorage.testNum)
+      console.log(type of localStorage.testNum)
+  
+  * Array
+
+      localStorage.testArray = ['a', 'b', 'c'];
+      console.log(localStorage.testArray)
+      console.log(type of localStorage.testArray)
+
+  * Object
+
+      localStorage.testObj = {};
+      console.log(localStorage.testObj)
+      console.log(type of localStorage.testObj)
+      
+  * toString
+
+      localStorage.testTransfer = {toString() { return 'hellword'}}    // 调用了toString()方法
+      console.log(type of localStorage.testTransfer)
 
 #### 同源策略
 
   * 同源策略，它是由Netscape提出的一个著名的安全策略。
   * 现在所有支持JavaScript 的浏览器都会使用这个策略。
   * 所谓同源是指，域名，协议，端口相同。
-  * 当一个浏览器的两个tab页中分别打开来 百度和谷歌的页面
-  * 当浏览器的百度tab页执行一个脚本的时候会检查这个脚本是属于哪个页面的，
-  * 即检查是否同源，只有和百度同源的脚本才会被执行。 [1] 
-  * 如果非同源，那么在请求数据时，浏览器会在控制台中报一个异常，提示拒绝访问
+  * 同源策略 ajax, sessionStorage, localStorage
+  * src 载入的资源不受同源策略限制
 
 #### 存储空间​​​​​​​（2M安全）
 
