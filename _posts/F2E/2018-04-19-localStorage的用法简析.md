@@ -15,6 +15,7 @@ HTML5 提供了两种在客户端存储数据的新方法：
 对于不同的网站，数据存储于不同的区域，并且一个网站只能访问其自身的数据。今天主要对localStorage的用法做一下简析。
 
 #### 属性值的增删查
+
 ##### 增加属性值
 
     localStorage.setItem('test', 'hello word');
@@ -29,12 +30,13 @@ HTML5 提供了两种在客户端存储数据的新方法：
 
 
 ##### 删除属性值
-  * 删除单个属性
+
+* 删除单个属性
 
       localStorage.removeItem('test');
       delete localStorage.test
 
-  * 删除所有自定义属性
+* 删除所有自定义属性
 
       localStorage.clear()
     
@@ -48,66 +50,66 @@ HTML5 提供了两种在客户端存储数据的新方法：
           console.log('url', e.url);
       })
 
-  注意：只能在同终端同源的的夸浏览器窗口的页面才能监听到，当天页面是不会触发storage事件的
+注意：只能在同终端同源的的夸浏览器窗口的页面才能监听到，当天页面是不会触发storage事件的
 
 #### 存储时间不受限制
 
-  除非用户主动删除，没有过期时间的的，
-  1  合理分配命名空间，防止脏数据污染，和key名的冲突
-  2  不要存储用户的隐私数据，如需存储尽量用sessionStorage
-  ...
+除非用户主动删除，没有过期时间的的，
+1.  合理分配命名空间，防止脏数据污染，和key名的冲突
+2.  不要存储用户的隐私数据，如需存储尽量用sessionStorage
+...
 
 #### 值的数据类型
 
-  只能存储String的值，非string类型的都会调用存储对象的toString()方法进行转换
-  #### test
+只能存储String的值，非string类型的都会调用存储对象的toString()方法进行转换
+#### test
 
-  * null 
+* null 
     
       localStorage.testNull = null; 
       console.log(localStorage.testNull)
       console.log(typeof localStorage.testNull)
 
-  * Booloon 
+* Booloon 
 
       localStorage.testBool = true; 
       console.log(localStorage.testBool)
       console.log(typeof localStorage.Bool)
 
-  * Number
+* Number
 
       localStorage.testNum = 1;    
       console.log(localStorage.testNum)
       console.log(type of localStorage.testNum)
   
-  * Array
+* Array
 
       localStorage.testArray = ['a', 'b', 'c'];
       console.log(localStorage.testArray)
       console.log(type of localStorage.testArray)
 
-  * Object
+* Object
 
       localStorage.testObj = {};
       console.log(localStorage.testObj)
       console.log(type of localStorage.testObj)
-      
-  * toString
+
+* toString
 
       localStorage.testTransfer = {toString() { return 'hellword'}}    // 调用了toString()方法
       console.log(type of localStorage.testTransfer)
 
 #### 同源策略
 
-  * 同源策略，它是由Netscape提出的一个著名的安全策略。
-  * 现在所有支持JavaScript 的浏览器都会使用这个策略。
-  * 所谓同源是指，域名，协议，端口相同。
-  * 同源策略 ajax, sessionStorage, localStorage
-  * src 载入的资源不受同源策略限制
+* 同源策略，它是由Netscape提出的一个著名的安全策略。
+* 现在所有支持JavaScript 的浏览器都会使用这个策略。
+* 所谓同源是指，域名，协议，端口相同。
+* 同源策略 ajax, sessionStorage, localStorage
+* src 载入的资源不受同源策略限制
 
 #### 存储空间​​​​​​​（2M安全）
 
-  安全大小2M，非持久化建议使用sessionStorage
+安全大小2M，非持久化建议使用sessionStorage
 
     localStorage.testSize = '0'.repeat(1024*1024*5) //最新的Chrome
     localStorage.testSize = '0'.repeat(1024*1024*2) //最新的Safari
